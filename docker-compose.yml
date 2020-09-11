@@ -1,0 +1,18 @@
+version: "3"
+services:
+
+  release-belt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ztj1993/release-belt:latest
+    hostname: release-belt
+    container_name: release-belt
+    network_mode: custom
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data:/srv/releases
+    expose:
+      - 80/tcp
+    ports:
+      - 80/tcp
