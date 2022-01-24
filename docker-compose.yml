@@ -11,6 +11,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./data:/srv/releases
+      - ./config.php:/srv/config/config.php
     expose:
       - 80/tcp
     ports:
